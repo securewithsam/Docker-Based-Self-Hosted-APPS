@@ -1,0 +1,29 @@
+docker system prune -f
+docker system prune -a -f
+docker system prune --volumes -f
+
+
+
+
+docker container ls -a
+
+docker container prune (To remove all stopped containers)
+
+docker container stop 7b6e39697ca9 (stop the container)
+
+docker container rm 7b6e39697ca9 (remove the container)
+
+
+Removing Docker Images:
+docker image ls
+docker image rm 7b6e39697ca9 2a4cca5ac898
+docker image prune -a
+
+
+docker volume ls
+
+docker volume rm 4e12af8913af888ba67243dec78419bf18adddc3c7a4b2345754b6db64293163
+
+
+
+sudo docker container restart 48062c149ebb
