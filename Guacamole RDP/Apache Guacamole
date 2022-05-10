@@ -23,3 +23,6 @@ save the file with CTRL + O, then press Enter to confirm, and exit the nano text
 docker-compose up -d
 docker-compose logs -f
 http://xx.xx.xx.xx:8280
+
+username: guacadmin
+password: guacadmin
