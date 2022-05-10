@@ -4,6 +4,8 @@ mkdir docker
 mkdir guacamole
 cd guacamole
 nano docker-compose.yml
+
+
 version: "3"
 services:
   guacamole:
