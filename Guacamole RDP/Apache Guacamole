@@ -1,0 +1,25 @@
+#Guacamole RDP
+Need Docker-CE and Docker-Compose
+mkdir docker
+mkdir guacamole
+cd guacamole
+nano docker-compose.yml
+version: "3"
+services:
+  guacamole:
+    image: jwetzell/guacamole
+    container_name: guacamole
+    volumes:
+      - ./postgres:/config
+    ports:
+      - 8280:8080
+volumes:
+  postgres:
+    driver: local
+    
+    
+save the file with CTRL + O, then press Enter to confirm, and exit the nano text editor with CTRL + X
+
+docker-compose up -d
+docker-compose logs -f
+http://xx.xx.xx.xx:8280
