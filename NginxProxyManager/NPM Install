@@ -1,0 +1,69 @@
+#Installing NGINX Proxy Manager :
+
+Step1:
+Install Docker, Docker-Compose
+https://docs.docker.com/engine/install/debian/
+
+
+#sudo -i 
+#mkdir nginx_proxy_manager
+#cd nginx_proxy_manager
+
+#nano docker-compose.yml
+
+version: "3"
+services:
+  app:
+    image: jc21/nginx-proxy-manager:2
+    restart: always
+    ports:
+      # Public HTTP Port:
+      - '80:80'
+      # Public HTTPS Port:
+      - '443:443'
+      # Admin Web Port:
+      - '81:81'
+    environment:
+      # Uncomment this if IPv6 is not enabled on your host
+      DISABLE_IPV6: 'true'
+    volumes:
+      # Make sure this config.json file exists as per instructions above:
+      - ./config.json:/app/config/production.json
+      - ./data:/data
+      - ./letsencrypt:/etc/letsencrypt
+    depends_on:
+      - db
+  db:
+    image: yobasystems/alpine-mariadb:latest
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: 'RGGjy2@G-SgHvXAbuirt'
+      MYSQL_DATABASE: 'npm'
+      MYSQL_USER: 'sunny'
+      MYSQL_PASSWORD: 'RGGjy2@G-SgHvXAbuirt'
+    volumes:
+      - ./data/mysql:/var/lib/mysql
+
+Part -2 :
+
+#cd nginx_proxy_manager
+
+#nano config.json
+
+
+{
+  "database": {
+    "engine": "mysql",
+    "host": "db",
+    "name": "npm",
+    "user": "sunny",
+    "password": "RGGjy2@G-SgHvXAbuirt",
+    "port": 3306
+  }
+}
+
+
+
+
+---------------
+docker-compose up -d
