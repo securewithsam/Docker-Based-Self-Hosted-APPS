@@ -1,0 +1,32 @@
+Step 1:
+sudo passwd root
+sudo passwd -u root
+
+Install Docker and Docker Compose
+
+root# apt install git
+root# git clone https://github.com/bmcgonag/docker_installs.git
+root# cd docker_installs
+root# chmod +x install_docker_nproxyman_ubuntu_20.04.sh
+root# ./install_docker_nproxyman_ubuntu_20.04.sh
+
+
+Step 2:
+
+sudo apt-get install \
+  apparmor-utils \
+  avahi-daemon \
+  dbus \
+  jq \
+  network-manager \
+  socat
+
+
+
+Step 3:
+
+sudo curl -sL "https://raw.githubusercontent.com/home-assistant/supervised-installer/master/installer.sh" | bash -s
+
+
+
+Navigate to URL http://xx.xx.xx:8123
