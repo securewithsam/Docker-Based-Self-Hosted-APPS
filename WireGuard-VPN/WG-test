@@ -1,25 +1,11 @@
-Install Docker:
-https://docs.docker.com/engine/install/ubuntu/
-
+ 
 sudo apt-get update
- sudo apt-get install \
-    ca-certificates \
-    curl \
-    gnupg \
-    lsb-release
+sudo apt-get upgrade
+curl -fsSL https://get.docker.com -o get-docker.sh
+sh get-docker.sh
 
-
- curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
-
-
-echo \
-  "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
-  $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
-
-
- sudo apt-get update
- sudo apt-get install docker-ce docker-ce-cli containerd.io
-
+sudo curl -L --fail https://raw.githubusercontent.com/linuxserver/docker-docker-compose/v2/run.sh -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
 
 docker run -d \
   --name=wireguard \
@@ -42,3 +28,15 @@ docker run -d \
   
  
  
+allow all ports on the cloud instance
+
+ sudo  docker exec -it wireguard /app/show-peer 3 (to view qr code to connect on mobile)
+cd /etc/wireguard/config/ #cat peer1/peer1.conf   (to copy connection info to connect in windows/mac)
+
+
+sudo su 
+#cd /etc/wireguard/config/
+#cat peer1/peer1.conf   (to copy connection info to connect in windows)
+#root@wg-in-01:/etc/wireguard/config# docker exec -it wireguard bash
+#root@d40a91e8568b:/# wg show
+sudo docker container restart container number
