@@ -1,0 +1,70 @@
+sudo su
+
+sudo apt-get install apt-transport-https ca-certificates curl gnupg-agent software-properties-common
+
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+
+sudo apt-get update && sudo apt-get install docker-ce docker-ce-cli containerd.io
+
+
+sudo curl -L "https://github.com/docker/compose/releases/download/1.26.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+
+sudo apt install docker-compose
+
+sudo chmod +x /usr/local/bin/docker-compose
+
+sudo usermod -aG docker $USER
+
+newgrp docker
+
+
+sudo mkdir /opt/wireguard-server
+
+sudo chown ubuntu:ubuntu /opt/wireguard-server
+
+nano /opt/wireguard-server/docker-compose.yaml
+
+
+version: "2.1"
+services:
+  wireguard:
+    image: linuxserver/wireguard
+    container_name: wireguard
+    cap_add:
+      - NET_ADMIN
+      - SYS_MODULE
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=America/Toronto
+      - SERVERPORT=51820 #optional
+      - PEERS=100 #optional
+      - PEERDNS=auto #optional
+      - INTERNAL_SUBNET=10.13.13.0 #optional
+    volumes:
+      - /opt/wireguard-server/config:/config
+      - /lib/modules:/lib/modules
+    ports:
+      - 51820:51820/udp
+    sysctls:
+      - net.ipv4.conf.all.src_valid_mark=1
+    restart: unless-stopped
+
+
+cd /opt/wireguard-server/
+
+docker-compose up -d
+
+
+sudo docker exec -it wireguard /app/show-peer 1 (to view qr code to connect on mobile)
+cd /opt/wireguard-server/config#cat peer1/peer1.conf   (to copy connection info to connect in windows/mac)
+
+
+docker exec -it wireguard /app/show-peer 1
+docker-compose up -d --force-recreate
+
+
+
+root@wg-in-01:/etc/wireguard/config# docker exec -it wireguard bash
