@@ -1,24 +1,11 @@
-sudo su
+sudo apt-get update
+sudo apt-get upgrade
 
-sudo apt-get install apt-transport-https ca-certificates curl gnupg-agent software-properties-common
+curl -fsSL https://get.docker.com -o get-docker.sh
+sh get-docker.sh
 
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-
-sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
-
-sudo apt-get update && sudo apt-get install docker-ce docker-ce-cli containerd.io
-
-
-sudo curl -L "https://github.com/docker/compose/releases/download/1.26.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
-
-sudo apt install docker-compose
-
+sudo curl -L --fail https://raw.githubusercontent.com/linuxserver/docker-docker-compose/v2/run.sh -o /usr/local/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose
-
-sudo usermod -aG docker $USER
-
-newgrp docker
-
 
 sudo mkdir /opt/wireguard-server
 
@@ -57,14 +44,26 @@ cd /opt/wireguard-server/
 
 docker-compose up -d
 
-
 sudo docker exec -it wireguard /app/show-peer 1 (to view qr code to connect on mobile)
+
 cat /opt/wireguard-server/config/peer1/peer1.conf   (to copy connection info to connect in windows/mac)
 
 
-docker exec -it wireguard /app/show-peer 1
+****IMPORTANT****
+
+MAKE SURE TO OPEN PORT 51820 ON THE CLOUD INSTANCE 
+
+---------------*************---------------------
+If you want to share the connection then use below command to get different peer info to connect in windows/mac
+
+cat /opt/wireguard-server/config/peer2/peer2.conf
+cat /opt/wireguard-server/config/peer3/peer3.conf
+cat /opt/wireguard-server/config/peer4/peer4.conf
+
+If you want to share the connection then use below command to get different peer info to connect on mobile devices via QR code
+sudo docker exec -it wireguard /app/show-peer 10
+sudo docker exec -it wireguard /app/show-peer 11
+sudo docker exec -it wireguard /app/show-peer 12
+
+
 docker-compose up -d --force-recreate
-
-
-
-root@wg-in-01:/etc/wireguard/config# docker exec -it wireguard bash
