@@ -19,3 +19,12 @@ coreutils    8.30-3ubuntu2                                CVE-2016-2781     Low
 libc-bin     2.31-0ubuntu9.2                              CVE-2020-6096     Low
 libc-bin     2.31-0ubuntu9.2                              CVE-2021-3326     Low
 libc-bin     2.31-0ubuntu9.2                              CVE-2016-10228    Negligible
+
+
+
+[OPTION:2]
+INSTALL DOCKER
+
+docker pull anchore/grype:latest
+docker run -it --rm anchore/grype:latest alpine:latest
+docker run -it --rm anchore/grype:v0.17 python:slim
