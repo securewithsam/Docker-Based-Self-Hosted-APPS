@@ -28,3 +28,4 @@ INSTALL DOCKER
 docker pull anchore/grype:latest
 docker run -it --rm anchore/grype:latest alpine:latest
 docker run -it --rm anchore/grype:v0.17 python:slim
+docker run -it --rm anchore/grype:latest snipe/snipe-it
