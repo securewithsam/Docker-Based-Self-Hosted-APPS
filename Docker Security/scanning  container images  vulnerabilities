@@ -1,0 +1,21 @@
+# Grype is a command line tool for scanning the contents of a container image or filesystem in order to find known vulnerabilities.
+
+
+wget -qO - https://raw.githubusercontent.com/anchore/grype/main/install.sh | sudo bash -s -- -b /usr/local/bin
+grype version
+grype ubuntu:latest
+
+
+
+[Result]
+
+Vulnerability DB        [updated]
+Parsed image
+Cataloged packages      [92 packages]
+Scanned image           [32 vulnerabilities]
+NAME         INSTALLED                 FIXED-IN           VULNERABILITY     SEVERITY
+bash         5.0-6ubuntu1.1                               CVE-2019-18276    Low
+coreutils    8.30-3ubuntu2                                CVE-2016-2781     Low
+libc-bin     2.31-0ubuntu9.2                              CVE-2020-6096     Low
+libc-bin     2.31-0ubuntu9.2                              CVE-2021-3326     Low
+libc-bin     2.31-0ubuntu9.2                              CVE-2016-10228    Negligible
