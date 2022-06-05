@@ -20,7 +20,7 @@ mkdir -p /data/prometheus
 chown prometheus:prometheus /data/prometheus /etc/prometheus/*
 [ copy paste prometheus.yml FILE CONTENTS ]
   
-To find user id fo rthe user "prometheus"
+To find user id for the user "prometheus"
 cat /etc/passwd | grep prometheus  
 
   
