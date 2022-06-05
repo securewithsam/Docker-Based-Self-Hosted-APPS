@@ -16,8 +16,6 @@ Step 2:
 sudo mkdir /etc/prometheus
 sudo nano /etc/prometheus/prometheus.yml
 [ copy paste prometheus.yml FILE CONTENTS ]
-
-
   
   
  Step 3:
