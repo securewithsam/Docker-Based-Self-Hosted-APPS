@@ -21,7 +21,7 @@ sudo nano /etc/prometheus/prometheus.yml
   
   
  Step 3:
-  Create portainer stack 
+  Create portainer stack  for  docker-compose.yml
 
     
     
