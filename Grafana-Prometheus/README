@@ -12,9 +12,13 @@ sudo chmod +x /usr/local/bin/docker-compose
 
 
 Step 2:
+sudo -i 
+useradd -rs /bin/false prometheus
+mkdir /etc/prometheus
+touch /etc/prometheus/prometheus.yml
+mkdir -p /data/prometheus
+chown prometheus:prometheus /data/prometheus /etc/prometheus/*
 
-sudo mkdir /etc/prometheus
-sudo nano /etc/prometheus/prometheus.yml
 [ copy paste prometheus.yml FILE CONTENTS ]
   
   
