@@ -18,9 +18,11 @@ mkdir /etc/prometheus
 touch /etc/prometheus/prometheus.yml
 mkdir -p /data/prometheus
 chown prometheus:prometheus /data/prometheus /etc/prometheus/*
-
 [ copy paste prometheus.yml FILE CONTENTS ]
   
+To find user id fo rthe user "prometheus"
+cat /etc/passwd | grep prometheus  
+
   
  Step 3:
   Create portainer stack  for  docker-compose.yml
