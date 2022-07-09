@@ -1,4 +1,4 @@
-# Install, Setup & COnfigure Wireguard
+# Install, Setup & Configure Wireguard
 
 ```sh
 sudo apt-get update && sudo apt-get upgrade -y
