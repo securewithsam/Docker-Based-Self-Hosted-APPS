@@ -1,6 +1,6 @@
-#### How to install wordpress using docker 
+# How to install wordpress using docker-compose 
 
-
+```sh
 version: '3.1'
 
 services:
@@ -34,3 +34,4 @@ services:
 volumes:
   wordpress:
   db:
+```
