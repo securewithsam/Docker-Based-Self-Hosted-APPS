@@ -71,7 +71,7 @@ cat /opt/wireguard-server/config/peer1/peer1.conf   (to copy connection info to 
 
 
 
-# If you want to share the connection then use below command to get different peer info to connect in windows/mac
+## If you want to share the connection then use below command to get different peer info to connect in windows/mac
 
 ```sh
 cat /opt/wireguard-server/config/peer2/peer2.conf
@@ -84,7 +84,7 @@ cat /opt/wireguard-server/config/peer4/peer4.conf
 ```
 
 
-# If you want to share the connection then use below command to get different peer info to connect on mobile devices via QR code
+## If you want to share the connection then use below command to get different peer info to connect on mobile devices via QR code
 ```sh
 sudo docker exec -it wireguard /app/show-peer 10
 ```
