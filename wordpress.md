@@ -1,4 +1,4 @@
-H3 How to install wordpress using docker-compose 
+# How to install wordpress using docker-compose 
 
 ```sh
 version: '3.1'
