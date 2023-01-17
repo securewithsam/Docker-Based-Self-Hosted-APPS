@@ -30,3 +30,12 @@ http://xx.xx.xx.xx:8280
 
 username: guacadmin
 password: guacadmin
+
+
+
+*** permission Denied Error while pulling up docker compose -run commands below***
+
+sudo chmod +x /usr/local/bin/docker-compose;
+sudo usermod -aG docker $USER
+sudo chgrp docker /usr/local/bin/docker-compose
+sudo chmod 750 /usr/local/bin/docker-compose  
