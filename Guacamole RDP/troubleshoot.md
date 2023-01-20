@@ -6,8 +6,10 @@
 ```sh
  nano /etc/docker/daemon.json
 ```
-``sh
+
+```sh
 {
   "bip": "192.0.0.1/16"
 }
+
 ```
