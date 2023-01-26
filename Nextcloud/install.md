@@ -43,3 +43,19 @@ apt install nano
 ```sh
 nano /var/www/html/config/config.php
 ```
+
+#### Increase File Size Uploads with .htaccess
+
+```sh
+php_value memory_limit 2G
+php_value upload_max_filesize 16G
+php_value post_max_size 16G
+php_value max_input_time 3600
+php_value max_execution_time 3600
+```
+
+### copy paste the above on the location below and save and restart next cloud container app
+
+```sh
+nano /var/www/html/.htaccess
+```
