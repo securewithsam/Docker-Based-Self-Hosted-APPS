@@ -44,6 +44,16 @@ apt install nano
 nano /var/www/html/config/config.php
 ```
 
+```sh
+'trusted_domains' =>
+  array (
+   0 => 'localhost',
+   1 => 'server1.example.com',
+   2 => '192.168.1.50',
+   3 => '[fe80::1:50]',
+),
+```
+
 #### Increase File Size Uploads with .htaccess
 
 ```sh
