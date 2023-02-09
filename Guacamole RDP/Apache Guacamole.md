@@ -38,11 +38,12 @@ password: guacadmin
 
 *** permission Denied Error while pulling up docker compose -run commands below***
 
+```sh
 sudo chmod +x /usr/local/bin/docker-compose;
 sudo usermod -aG docker $USER
 sudo chgrp docker /usr/local/bin/docker-compose
 sudo chmod 750 /usr/local/bin/docker-compose  
-
+```
 
 
 
@@ -51,9 +52,10 @@ sudo chmod 750 /usr/local/bin/docker-compose
 
 Install docker compose
 
-
+```sh
 curl -sL "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 chmod +x /usr/local/bin/docker-compose
-
-
+```
+```sh
 docker-compose --version
+```
