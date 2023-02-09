@@ -5,7 +5,7 @@ mkdir guacamole
 cd guacamole
 nano docker-compose.yml
 
-
+```sh
 version: "3"
 services:
   guacamole:
@@ -21,11 +21,13 @@ services:
 volumes:
   postgres:
     driver: local
-    
+```    
     
 save the file with CTRL + O, then press Enter to confirm, and exit the nano text editor with CTRL + X
 
+```sh
 docker-compose up -d
+```
 docker-compose logs -f
 http://xx.xx.xx.xx:8280
 
