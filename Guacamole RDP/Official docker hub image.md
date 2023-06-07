@@ -1,0 +1,59 @@
+```sh
+version: "2"
+services:
+
+  guacamole:
+    image: guacamole/guacamole
+    container_name: guacamole
+    environment:
+      GUACD_HOSTNAME: guacd
+      MYSQL_HOSTNAME: guacamole_db
+      MYSOL_DATABASE: guacamole_db
+      MYSOL_USER: guacamole_user
+      MYSQL_PASSWORD: Zrjr7dpS8L5R27878 
+      #HEADER ENABLED: true
+      #HTTP _ AUTH_ HEADER: X-Forwarded-User links:
+    links:
+    - guacd
+    depends_on:
+    - guacd
+    - guacamole_db
+    ports:
+    - 8080:8080/tcp # Guacamole is on :8080/guacamole, not /
+    restart: unless-stopped
+    networks:
+      - guacamole
+      - guacamole_db
+
+guacd:
+  image: guacamole/guacd
+  container_name: guacd
+  volumes:
+  - /home/docker/appdata/guacamole/drive:/drive:rw
+  - /home/docker/appdata/guacamole/record:/record:rw
+  restart: unless-stopped
+  networks:
+    - guacamole
+
+guacamole_db:
+  image: mariadb:latest
+  container_name: guacamole_db
+  environment:
+    MYSQL_ROOT_PASSWORD: U4Zzu794C6Bign
+    MYSQL_DATABASE: guacamole_db
+    MYSQL_USER: guacamole_user
+    MYSQL_PASSWORD: Zrjr7dpS8L5R27878
+  volumes:
+    - /home/docker/appdata/guacamole/init:/docker-entrypoint-initdb.d:2 #chmod777init/
+    - /home/docker/appdata/guacamole/data:/var/lib/mysql 
+  restart: unless-stopped
+  networks:
+    - guacamole_db
+
+networks:
+  guacamole:
+    name: guacamole
+  guacamole_db:
+    name: guacamole_db  
+
+```
