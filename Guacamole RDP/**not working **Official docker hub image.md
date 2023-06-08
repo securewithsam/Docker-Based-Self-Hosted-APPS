@@ -1,3 +1,4 @@
+```sh
 ## Guacamole 
 
 version: "3.1"
@@ -57,3 +58,4 @@ secrets:
 volumes:
   db:
     external: true
+```
