@@ -1,59 +1,59 @@
-```sh
-version: "2"
-services:
+## Guacamole 
 
+version: "3.1"
+ 
+services:
+ 
+# Configure MariaDB with persistent storage
+  database:
+    image: mariadb:10.0
+    hostname: db
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD_FILE: '/run/secrets/mysql-root'
+      MYSQL_DATABASE: 'guacamole_db'
+      MYSQL_USER: 'guacamole_user'
+      MYSQL_PASSWORD: '/run/secrets/guacamole-user'
+    container_name: db 
+    volumes:
+      - "db:/var/lib/mysql"
+    secrets:
+      - mysql-root
+      - guacamole-user
+ 
+# Configure proxy daemon
+  guacd:
+    image: guacamole/guacd:1.5.2
+    container_name: guacd
+    restart: always
+ 
+# Configure and link Guacamole to db and proxy
+# expose port 8080 to host.
   guacamole:
-    image: guacamole/guacamole
+    image: guacamole/guacamole:1.5.2
     container_name: guacamole
+    restart: always
+    ports:
+      - 8080:8080
+    links:
+      - guacd
+      - database
     environment:
       GUACD_HOSTNAME: guacd
-      MYSQL_HOSTNAME: guacamole_db
-      MYSOL_DATABASE: guacamole_db
-      MYSOL_USER: guacamole_user
-      MYSQL_PASSWORD: Zrjr7dpS8L5R27878 
-      #HEADER ENABLED: true
-      #HTTP _ AUTH_ HEADER: X-Forwarded-User links:
-    links:
-    - guacd
-    depends_on:
-    - guacd
-    - guacamole_db
-    ports:
-    - 8080:8080/tcp # Guacamole is on :8080/guacamole, not /
-    restart: unless-stopped
-    networks:
-      - guacamole
-      - guacamole_db
-
-guacd:
-  image: guacamole/guacd
-  container_name: guacd
-  volumes:
-  - /home/docker/appdata/guacamole/drive:/drive:rw
-  - /home/docker/appdata/guacamole/record:/record:rw
-  restart: unless-stopped
-  networks:
-    - guacamole
-
-guacamole_db:
-  image: mariadb:latest
-  container_name: guacamole_db
-  environment:
-    MYSQL_ROOT_PASSWORD: U4Zzu794C6Bign
-    MYSQL_DATABASE: guacamole_db
-    MYSQL_USER: guacamole_user
-    MYSQL_PASSWORD: Zrjr7dpS8L5R27878
-  volumes:
-    - /home/docker/appdata/guacamole/init:/docker-entrypoint-initdb.d:2 #chmod777init/
-    - /home/docker/appdata/guacamole/data:/var/lib/mysql 
-  restart: unless-stopped
-  networks:
-    - guacamole_db
-
-networks:
-  guacamole:
-    name: guacamole
-  guacamole_db:
-    name: guacamole_db  
-
-```
+      MYSQL_HOSTNAME: db
+      MYSQL_DATABASE: guacamole_db
+      MYSQL_USER: guacamole_user
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+    secrets:
+      - guacamole-user
+ 
+secrets:
+  mysql-root:
+    file: mysql-root
+  guacamole-user:
+    file: guacamole-user
+ 
+# This volume has to be created before docker-compose up
+volumes:
+  db:
+    external: true
