@@ -34,7 +34,7 @@ iptables -F DOCKER
 ```
 #### Start Docker Service
 ```sh
-systenctl start docker.service
+systemctl start docker.service
 ```
 #### Verify MASQUARADE rule has new subnet address
 ```sh
