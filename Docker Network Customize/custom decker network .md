@@ -21,7 +21,7 @@ DOCKER_NETWORK_OPTIONS="--bip=192.3.3.3/24"
 ```sh
 ip link set dev docker0 down
 ```
-####Verify if IP forwarding is enabled 
+#### Verify if IP forwarding is enabled 
 ```sh
 sysctl net.ipv4.conf.all.forwarding
 ```
