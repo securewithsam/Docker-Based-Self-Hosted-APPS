@@ -55,7 +55,7 @@ An example of file
 docker rm -f `docker ps -q -a`
 ```
 
-####Delete all unused Docker objects:
+#### Delete all unused Docker objects:
 ```sh
 docker system prune
 docker network prune
