@@ -5,8 +5,7 @@ By default, Docker virtualization system uses 172.17.0.0/12 networks for its ope
 #### Request the list of networks:
 ```sh
 docker network list
-```sh
-
+```
 ```sh
 #### An example of response
 
