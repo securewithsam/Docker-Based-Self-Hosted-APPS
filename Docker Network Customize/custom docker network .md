@@ -33,7 +33,10 @@ ip link set dev br-2f18408fb94d down
 nano /etc/sysconfig/docker-network 
 ```
 ```sh
-DOCKER_NETWORK_OPTIONS="--bip=192.3.3.3/24"
+{
+    "bip": "192.168.9.0/16"
+}
+
 ```
 
 #### Verify old routes 
