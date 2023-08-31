@@ -35,9 +35,9 @@ An example of commands with responses
 #### Changing the network for DockerLink to Changing the network for Docker
 To change the settings of networks used by Docker:
 ```sh
-Edit or create the nano/etc/docker/daemon.json file:
-
-An example of file
+nano/etc/docker/daemon.json file:
+```
+#### An example of file
 ```sh
 {
 	"live-restore": true,
@@ -47,7 +47,7 @@ An example of file
 		"size": 16
 	}]
 }
-```sh
+```
 
  Comments to the file format
 #### Delete all running docker containers:
