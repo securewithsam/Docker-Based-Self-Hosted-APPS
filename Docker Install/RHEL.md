@@ -20,14 +20,24 @@ sudo dnf config-manager --add-repo=https://download.docker.com/linux/centos/dock
 sudo yum install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin -y
 ```
 ```sh
-sudo systemctl start docker
+nano /etc/docker/daemon.json
+```
+```sh
+{
+	"live-restore": true,
+	"bip": "10.10.3.1/24",
+	"default-address-pools": [{
+		"base": "10.0.3.0/24",
+		"size": 24
+	}]
+}
+```
+```sh
+sudo systemctl restart docker
 ```
 
-
-
-
 ----------------------------------------------------------------------------------------------
-
+#### Optional
 
 ```sh
 sudo dnf config-manager \
