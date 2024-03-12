@@ -51,7 +51,7 @@ sudo php -r "echo base64_encode(openssl_random_pseudo_bytes(32));"
 ```
 ##### Docker Compose File
 ```sh
-nano docker-compose.yml
+sudo nano docker-compose.yml
 ```
 ```sh
 version: "3"
