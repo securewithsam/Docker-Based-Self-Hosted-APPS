@@ -1,4 +1,4 @@
-#### Web based TOTP
+## Web based TOTP
 #### This needs tbe installed as sudo user - Do Not install as root 
 
 
