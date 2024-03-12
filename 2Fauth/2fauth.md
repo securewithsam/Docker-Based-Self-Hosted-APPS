@@ -9,14 +9,17 @@ https://docs.docker.com/engine/install/ubuntu/
 
 #### Add user
 ```sh
-adduser 2user1
+adduser user1
 usermod -aG sudo user1
 ```
 ```sh
 sudo mkdir docker
 sudo cd docker
 sudo mkdir 2fauth
+cd 2fauth
+mkdir 2fauth
 sudo chown -R user1:user1 2fauth
+chmod 700 2fauth
 sudo apt install php7.4
 ```
 #### Random 32 key generator
