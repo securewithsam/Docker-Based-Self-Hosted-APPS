@@ -212,4 +212,3 @@ sudo docker logs 2fauth
 ls-al
 ```
 
-      ```
