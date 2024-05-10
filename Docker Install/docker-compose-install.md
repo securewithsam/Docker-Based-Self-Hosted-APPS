@@ -1,3 +1,12 @@
+### Remove Installed Binaries for Docker Compose 
+
+```sh
+sudo rm -r /usr/bin/docker-compose
+sudo rm -r /usr/local/bin/docker-compose
+```
+
+### Install Docker-Compose
+
 ```sh
 cd ~/
 
