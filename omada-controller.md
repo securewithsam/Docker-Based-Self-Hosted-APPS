@@ -25,6 +25,8 @@ docker run -d \
     mbentley/omada-controller:latest
 ```
 
+### Visit the Omda webUI with https://IP:8043
+
 #### Docker-Compose
 
 ```sh
