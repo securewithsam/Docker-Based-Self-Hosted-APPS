@@ -44,8 +44,8 @@ services:
     stop_grace_period: 60s
     network_mode: host
     environment:
-      - PUID=508
-      - PGID=508
+      - PUID=1000
+      - PGID=1000
       - MANAGE_HTTP_PORT=8088
       - MANAGE_HTTPS_PORT=8043
       - PORTAL_HTTP_PORT=8088
