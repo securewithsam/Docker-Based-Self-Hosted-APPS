@@ -2,8 +2,8 @@
 ```sh
 mkdir docker 
 cd docker
-mkdir sterling-pdf
-cd sterling-pdf
+mkdir stirling-pdf
+cd stirling-pdf
 mkdir trainingData
 mkdir extraConfigs
 cd trainingData
@@ -13,7 +13,7 @@ Download the language pack
 ```sh
 wget https://github.com/tesseract-ocr/tessdata/blob/main/eng.traineddata
 ```
-Go back to  sterling-pdf folder 
+Go back to  stirling-pdf folder 
 
 ```sh
 nano docker-compose.yml
