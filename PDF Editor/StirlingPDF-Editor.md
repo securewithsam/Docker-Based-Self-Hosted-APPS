@@ -1,11 +1,8 @@
 
 ```sh
-mkdir docker 
-cd docker
-mkdir stirling-pdf
-cd stirling-pdf
-mkdir trainingData
-mkdir extraConfigs
+mkdir docker
+mkdir -p docker/stirling-pdf/trainingData 
+mkdir -p docker/stirling-pdf/extraConfigs
 cd trainingData
 ```
 Download the language pack 
