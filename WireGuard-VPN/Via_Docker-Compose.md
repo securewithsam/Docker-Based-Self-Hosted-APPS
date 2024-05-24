@@ -1,4 +1,4 @@
-# Install, Setup & Configure Wireguard
+# Install, Setup & Configure Wireguard (Oracle Cloud)
 
 ```sh
 sudo apt-get update && sudo apt-get upgrade -y
