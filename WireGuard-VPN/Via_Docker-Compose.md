@@ -57,11 +57,13 @@ cd /opt/wireguard-server/
 ```sh
 docker-compose up -d
 ```
+to view qr code to connect on mobile
 ```sh
-sudo docker exec -it wireguard /app/show-peer 1 (to view qr code to connect on mobile)
+sudo docker exec -it wireguard /app/show-peer 1 
 ```
+to copy connection info to connect in windows/mac
 ```sh
-cat /opt/wireguard-server/config/peer1/peer1.conf   (to copy connection info to connect in windows/mac)
+cat /opt/wireguard-server/config/peer1/peer1.conf   
 ```
 
                                                        ****IMPORTANT****
