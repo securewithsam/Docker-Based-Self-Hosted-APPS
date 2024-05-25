@@ -4,10 +4,10 @@
 sudo apt-get update && sudo apt-get upgrade -y
 ```
 ```sh
-curl -fsSL https://get.docker.com -o get-docker.sh
+sudo curl -fsSL https://get.docker.com -o get-docker.sh
 ```
 ```sh
-sh get-docker.sh
+sudo sh get-docker.sh
 ```
 ```sh
 sudo curl -L --fail https://raw.githubusercontent.com/linuxserver/docker-docker-compose/v2/run.sh -o /usr/local/bin/docker-compose
@@ -22,7 +22,7 @@ sudo mkdir /opt/wireguard-server
 sudo chown ubuntu:ubuntu /opt/wireguard-server
 ```
 ```sh
-nano /opt/wireguard-server/docker-compose.yaml
+sudo nano /opt/wireguard-server/docker-compose.yaml
 ```
 Paste below 
 ```sh
@@ -55,7 +55,7 @@ services:
 cd /opt/wireguard-server/
 ```
 ```sh
-docker-compose up -d
+sudo docker-compose up -d
 ```
 to view qr code to connect on mobile
 ```sh
@@ -97,5 +97,5 @@ sudo docker exec -it wireguard /app/show-peer 11
 sudo docker exec -it wireguard /app/show-peer 12
 ```
 ```sh
-docker-compose up -d --force-recreate
+sudo docker-compose up -d --force-recreate
 ```
