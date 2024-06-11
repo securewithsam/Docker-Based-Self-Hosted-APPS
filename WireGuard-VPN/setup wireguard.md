@@ -66,9 +66,9 @@ to copy connection info to connect in windows/mac
 cat /opt/wireguard-server/config/peer1/peer1.conf   
 ```
 
-                                                       ****IMPORTANT****
+                                                       ****  IMPORTANT  ****
 
-# MAKE SURE TO OPEN PORT 51820 ON THE CLOUD INSTANCE 
+### MAKE SURE TO OPEN PORT 51820 ON THE CLOUD INSTANCE 
 
 
 
