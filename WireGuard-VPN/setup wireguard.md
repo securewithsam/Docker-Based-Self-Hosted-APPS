@@ -96,6 +96,11 @@ sudo docker exec -it wireguard /app/show-peer 11
 ```sh
 sudo docker exec -it wireguard /app/show-peer 12
 ```
+### To delete the shared peer
+```sh
+/opt/wireguard-server/config
+rm -rf peer100
+```
 ```sh
 sudo docker-compose up -d --force-recreate
 ```
