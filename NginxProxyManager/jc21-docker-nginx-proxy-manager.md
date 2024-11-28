@@ -5,7 +5,12 @@ mkdir docker
 ```sh
 mkdir nginx-proxy-manager
 ```
-
+```sh
+cd nginx-proxy-manager
+```
+```sh
+nano docker-compose.yml
+```
 ```sh
 services:
   nginx-proxy-manager:
@@ -23,3 +28,7 @@ services:
 
 
 ```      
+
+```sh
+docker compose up -d
+```
