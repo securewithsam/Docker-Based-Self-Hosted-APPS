@@ -8,17 +8,23 @@ https://docs.docker.com/engine/install/ubuntu/
 
 
 ```sh
-mkdir -p docker/2fauth/2fauth_data/database
-sudo chmod -R 777 /home/infra-admin/docker/2fauth/2fauth_data
-sudo chown -R 1000:1000 /home/infra-admin/docker/2fauth/2fauth_data
+mkdir -p docker/2fauth/2fauth_data/
+mkdir -p /2fauth/database
+chmod -R 777 /2fauth/database
+sudo touch /root/docker/2fauth/database/database.sqlite
+sudo chmod -R 777 /root/docker/2fauth/database
+sudo chmod -R 777 /root/docker/2fauth/database/database.sqlite
+sudo chmod -R 777 /root/docker/2fauth/2fauth_data
+sudo chown -R 1000:1000 /home/root/docker/2fauth/2fauth_data
 sudo usermod -aG docker $USER
 sudo groupadd docker
 sudo apt install php -y
-sudo chown infra-admin 2fauth/
-sudo chown infra-admin 2fauth/2fauth_data/
-sudo chown infra-admin 2fauth/2fauth_data/database/
+sudo chown root docker/
+sudo chown root docker/2fauth/
+sudo chown root docker/2fauth/database/
+sudo chown root docker/2fauth/database/database.sqlite
 cd docker/2fauth
-sudo nano docker-compose.yml
+
 
 ```
 
