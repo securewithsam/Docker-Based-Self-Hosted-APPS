@@ -176,3 +176,7 @@ services:
       - VITE_PUSHER_APP_KEY="${PUSHER_APP_KEY}"
       - VITE_PUSHER_APP_CLUSTER="${PUSHER_APP_CLUSTER}"
       - MIX_ENV=local
+
+```bash
+sudo docker compose up -d
+```
