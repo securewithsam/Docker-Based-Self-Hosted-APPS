@@ -31,3 +31,9 @@ cd /root/docker/2fauth
   docker-compose up -d
 ```
 
+#### Troubleshooting Logs
+```bash
+sudo docker compose logs
+sudo docker logs 2fauth
+ls-al
+```
