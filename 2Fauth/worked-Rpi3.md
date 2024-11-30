@@ -1,5 +1,21 @@
 ### Install Docker and Docker compose
 
+```bash
+
+sudo apt-get update && sudo apt-get upgrade
+curl -fsSL test.docker.com -o get-docker.sh && sh get-docker.sh
+sudo usermod -aG docker ${USER}
+groups ${USER}
+
+sudo apt-get install libffi-dev libssl-dev
+sudo apt install python3-dev
+sudo apt-get install -y python3 python3-pip
+
+sudo pip3 install docker-compose
+sudo apt install docker-compose
+sudo systemctl enable docker
+```
+
 ```sh
 sudo apt install php -y
 mkdir -p docker/2fauth/2fauth_data/database
