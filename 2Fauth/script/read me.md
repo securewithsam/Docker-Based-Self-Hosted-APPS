@@ -23,3 +23,10 @@ sudo php -r "echo base64_encode(openssl_random_pseudo_bytes(32));"
 ### Make sure to update the APP_URL & ASSET_URL to the VM/Instance IP [If using a cloudflare, update he domain 
 ![image](https://github.com/user-attachments/assets/948c3ec3-a592-4992-b29d-2fff381ee945)
 
+
+3. cd docker/2fauth/ 
+4. 
+   ```bash
+  docker-compose up -d
+   ```
+
