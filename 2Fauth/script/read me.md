@@ -24,9 +24,9 @@ sudo php -r "echo base64_encode(openssl_random_pseudo_bytes(32));"
 ![image](https://github.com/user-attachments/assets/948c3ec3-a592-4992-b29d-2fff381ee945)
 
 
-3. cd docker/2fauth/ 
-4. 
-   ```bash
+cd docker/2fauth/ 
+
+```bash
   docker-compose up -d
-   ```
+```
 
