@@ -1,3 +1,5 @@
+## 2FAuth is a web based self-hosted alternative to One Time Passcode (OTP) generators like Google Authenticator 
+
 
 ### How to Use
 1. Save the script as `setup_2fauth.sh`.
