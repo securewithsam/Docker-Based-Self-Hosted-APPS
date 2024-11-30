@@ -31,6 +31,8 @@ cd /root/docker/2fauth
   docker-compose up -d
 ```
 
+###http://ip:port 
+
 #### Troubleshooting Logs
 ```bash
 sudo docker compose logs
