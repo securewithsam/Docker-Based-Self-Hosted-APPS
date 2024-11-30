@@ -24,7 +24,8 @@ sudo php -r "echo base64_encode(openssl_random_pseudo_bytes(32));"
 ![image](https://github.com/user-attachments/assets/948c3ec3-a592-4992-b29d-2fff381ee945)
 
 
-cd docker/2fauth/ 
+### Final Step , re pull the docker compose for changes to take effect  
+cd /root/docker/2fauth
 
 ```bash
   docker-compose up -d
