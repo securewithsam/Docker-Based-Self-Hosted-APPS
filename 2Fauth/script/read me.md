@@ -20,7 +20,7 @@ sudo php -r "echo base64_encode(openssl_random_pseudo_bytes(32));"
 ### Update the key in the docker-compose.yml environment variable under APP_KEY
 ![image](https://github.com/user-attachments/assets/b1dc5c36-c49a-4951-9c14-cc78eddcda43)
 
-### Make sure to update the APP_URL & ASSET_URL to the VM/Instance private IP [If using a cloudflare, update he domain ]
+### Make sure to update the APP_URL & ASSET_URL to the VM/Instance private IP (If using a cloudflare, update the domain) 
 ![image](https://github.com/user-attachments/assets/948c3ec3-a592-4992-b29d-2fff381ee945)
 
 
