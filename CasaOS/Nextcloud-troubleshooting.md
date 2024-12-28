@@ -1,6 +1,5 @@
 #### Path to change the trusted domain
 
-``sh
+```sh
 nano /DATA/AppData/big-bear-nextcloud/html/config/config.php
-
 ```
