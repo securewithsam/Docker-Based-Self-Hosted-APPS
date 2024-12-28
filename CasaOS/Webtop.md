@@ -1,3 +1,5 @@
+#### Remote Browser Isolation -KASM - Ephemeral Desktop
+
 ```sh
 ---
 version: "2"
